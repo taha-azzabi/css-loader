@@ -1,0 +1,195 @@
+html,
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  background: #03a9f4;
+}
+.section .section_loader {
+  padding: 50px;
+}
+
+.loader {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+}
+
+/**
+  Spin Loader
+**/
+.loader-cercle {
+  border: 6px solid rgba(156, 39, 176, 0.5);
+  border-radius: 50%;
+  position: relative;
+}
+.loader-cercle:after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border: 6px solid rgba(156, 39, 176, 0.5);
+  border-radius: 50%;
+  border-top-color: rgba(156, 39, 176, 0);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/**
+  BOUNCE
+**/
+.loader-bounce {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  animation: bounce 1.5s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(0, 0);
+  }
+  50% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(0, 0);
+  }
+}
+/**
+  DOUBLE BOUNCE
+**/
+.loader-double-bounce {
+  position: relative;
+}
+.loader-double-bounce-1, .loader-double-bounce-2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  animation: bounce 2s infinite ease-in-out;
+}
+.loader-double-bounce-2 {
+  animation-delay: -1s;
+}
+
+.loader-triangle {
+  border: 20px solid rgba(255, 255, 255, 0.8);
+  width: 0;
+  height: 0;
+  border-right-color: transparent;
+  border-left-color: transparent;
+  animation: sablier-temps 2s linear infinite;
+}
+
+@keyframes sablier-temps {
+  0% {
+    border-top-color: rgba(255, 255, 255, 0.8);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    border-top-color: rgba(255, 255, 255, 0.1);
+    border-bottom-color: rgba(255, 255, 255, 0.8);
+  }
+}
+/**
+ HEART BEATING
+ **/
+.loader-heart-beat {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  background-color: #fff;
+  transform: rotate(45deg) scale(0.5);
+  animation: heart-beating 2s linear infinite;
+}
+.loader-heart-beat:before, .loader-heart-beat:after {
+  background-color: #fff;
+  position: absolute;
+  top: -17px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  content: "";
+  border-radius: 50%;
+}
+.loader-heart-beat:after {
+  top: 0px;
+  left: -17px;
+}
+
+@keyframes heart-beating {
+  0% {
+    transform: rotate(45deg) scale(1);
+  }
+  5% {
+    transform: rotate(45deg) scale(1.1);
+  }
+  40% {
+    transform: rotate(45deg) scale(0.8);
+  }
+  60% {
+    transform: rotate(45deg) scale(0.95);
+  }
+  100% {
+    transform: rotate(45deg) scale(1);
+  }
+}
+/*
+* LOADER BAR
+*/
+.loader-bar span {
+  display: inline-block;
+  width: 8px;
+  height: 30px;
+  background-color: #fff;
+  animation: grow-bar 1s linear -0.66s infinite;
+}
+.loader-bar span:first-child {
+  animation-delay: -0.33s;
+}
+.loader-bar span:last-child {
+  animation-delay: -1s;
+}
+
+@keyframes grow-bar {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+}
+/*
+* LOADER CIRCLE
+*/
+.loader-circle {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+/*# sourceMappingURL=style.css.map */
